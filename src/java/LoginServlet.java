@@ -33,8 +33,12 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         usuario.email = request.getParameter("email");
-        usuario.nome = request.getParame ter("nome");
+        usuario.nome = request.getParameter("nome");
         usuario.senha = request.getParameter("senha");
+        
+        usuario.mostrarNome();
+        usuario.mostrarEmail();
+        usuario.mostrarSenha();
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
